@@ -1,0 +1,326 @@
+/* ============================================================
+   CONFIGURAÇÕES GLOBAIS
+   ============================================================ */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+:root {
+    --azul-objetivo: #0d47a1;
+    --amarelo-objetivo: #f4e008;
+    --branco: #ffffff;
+    --cinza: #f4f4f4;
+}
+
+body { 
+    background: var(--cinza); 
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+/* ============================================================
+   NAVBAR (MENU)
+   ============================================================ */
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 8%; 
+    background: var(--azul-objetivo); 
+    color: white;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo img { width: 180px; transition: 0.3s; }
+
+nav { display: flex; align-items: center; }
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    margin-left: 20px; 
+    font-weight: 500; 
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--amarelo-objetivo); }
+
+.btn-sistema { 
+    background: var(--amarelo-objetivo); 
+    color: var(--azul-objetivo) !important; 
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    font-weight: bold;
+}
+
+/* ============================================================
+   CARROSSEL PRINCIPAL (SWIPER)
+   ============================================================ */
+.swiper { width: 100%; height: 65vh; background: #000; }
+.swiper-slide { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+.blur-bg { 
+    position: absolute; top: -10%; left: -10%; width: 120%; height: 120%; 
+    background-size: cover; background-position: center; 
+    filter: blur(25px) brightness(0.5); z-index: 1; 
+}
+
+.main-img { 
+    position: relative; z-index: 2; 
+    max-height: 90%; max-width: 95%; 
+    object-fit: contain; 
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6); 
+    border-radius: 4px; 
+}
+
+.swiper-button-next, .swiper-button-prev { color: var(--amarelo-objetivo); }
+.swiper-pagination-bullet-active { background: var(--amarelo-objetivo); }
+
+/* ============================================================
+   SEÇÕES GERAIS E CARDS
+   ============================================================ */
+.section { padding: 60px 10%; text-align: center; }
+
+.section-title { 
+    font-size: 2.5rem; 
+    color: var(--azul-objetivo); 
+    margin-bottom: 40px; 
+}
+
+.grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+}
+
+.card { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 10px; 
+    border-top: 6px solid var(--amarelo-objetivo); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    transition: 0.3s;
+}
+.card, p {
+    padding: 30px;
+    text-align: justify;
+    hyphens: auto;           /* Ativa a quebra com hífen */
+    -webkit-hyphens: auto;    /* Suporte para Safari/Chrome */
+    -ms-hyphens: auto;        /* Suporte para Edge */
+}
+.card, h3 {
+    text-align: center;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+/* ============================================================
+   SEÇÃO SOCIAL (PROJETOS)
+   ============================================================ */
+.section-social {
+    background-color: var(--branco);
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projeto-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px; 
+    width: 100%;
+    max-width: 1100px;
+}
+
+.projeto-row.reverse { flex-direction: row-reverse; }
+
+.projeto-text { flex: 1; }
+.projeto-text h3 { color: var(--azul-objetivo); font-size: 1.8rem; margin-bottom: 15px; }
+.projeto-text p { font-size: 1.1rem; line-height: 1.7; color: #444; text-align: justify; }
+
+.projeto-images { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.projeto-images img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   CARROSSEL DE MEDALHISTAS
+   ============================================================ */
+.carrossel-medalhas {
+    width: 100% !important;
+    height: auto !important; 
+    background: transparent !important; 
+    padding-bottom: 60px;
+    overflow: hidden !important; 
+    position: relative !important;
+}
+
+.card-medalha {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--azul-objetivo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backface-visibility: hidden; 
+}
+
+.card-medalha img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.btn-medalha-next, .btn-medalha-prev { color: var(--azul-objetivo) !important; }
+
+/* ============================================================
+   GALERIA DE FOTOS
+   ============================================================ */
+.photo-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; 
+}
+
+.photo-item img { 
+    width: 100%; 
+    aspect-ratio: 1/1;
+    object-fit: cover; 
+    border-radius: 10px; 
+    transition: 0.3s; 
+    cursor: pointer;
+}
+
+.photo-item img:hover { transform: scale(1.03); filter: brightness(1.1); }
+
+/* ============================================================
+   LIGHTBOX (ZOOM DA IMAGEM)
+   ============================================================ */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center; align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%; max-height: 80%;
+    border-radius: 8px; border: 3px solid white;
+}
+
+.lightbox-close {
+    position: absolute; top: 20px; right: 40px;
+    color: white; font-size: 50px; cursor: pointer;
+}
+
+/* ============================================================
+   SEÇÃO PARCEIROS (ESTILO LIMPO)
+   ============================================================ */
+.section-parceiros {
+    padding: 40px 10%;
+    background: #fff; /* Fundo branco puro */
+    text-align: center;
+}
+
+.container-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Espaço entre as logos */
+    flex-wrap: wrap; /* Para quebrar linha no celular */
+    margin-top: 20px;
+}
+
+.logo-item img {
+    width: 120px; /* Tamanho pequeno e controlado */
+    height: auto;
+    filter: grayscale(100%); /* Cinza para não brigar com o site */
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .container-logos {
+        gap: 20px;
+    }
+    .logo-item img {
+        width: 80px; /* Ainda menor no celular */
+    }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-container {
+    background-color: var(--azul-objetivo); 
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-socials { display: flex; gap: 15px; }
+.footer-socials img { width: 28px; filter: brightness(0) invert(1); }
+
+/* ============================================================
+   RESPONSIVIDADE (CELULAR E TABLET)
+   ============================================================ */
+@media (max-width: 992px) {
+    .projeto-row, .projeto-row.reverse { flex-direction: column; text-align: center; }
+    .projeto-text { text-align: center; }
+    .projeto-images { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; padding: 15px; }
+    .logo img { width: 140px; margin-bottom: 15px; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { margin: 5px 10px; font-size: 14px; }
+
+    .swiper { height: 45vh; }
+    
+    .section-title { font-size: 1.8rem; }
+    
+    .projeto-images { grid-template-columns: 1fr; }
+    .projeto-images img { height: 250px; }
+
+    .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+    
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
