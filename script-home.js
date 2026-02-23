@@ -1,34 +1,31 @@
-// Inicialização do Carrossel Swiper
+// --- CARROSSEL PRINCIPAL (Banner) ---
 const swiper = new Swiper('.mySwiper', {
-    // Ciclo infinito
     loop: true,
-    
-    // Troca automática a cada 5 segundos
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
     },
-
-    // Pontinhos de navegação
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
-
-    // Setas laterais
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
 });
 
-console.log("Site da Escola Objetivo carregado com sucesso!");
-// Inicialização do novo carrossel de medalhistas
+// --- CARROSSEL DE MEDALHISTAS (Ajustado para centralizar) ---
 const swiperMedalhas = new Swiper('.carrossel-medalhas', {
-    slidesPerView: 1,
+    // Configurações para Mobile (padrão)
+    slidesPerView: 1.2,      // Mostra um slide inteiro e 20% dos vizinhos
+    centeredSlides: true,   // Mantém o slide ativo exatamente no meio
     spaceBetween: 20,
     loop: true,
-    autoplay: { delay: 4000 },
+    autoplay: { 
+        delay: 4000,
+        disableOnInteraction: false 
+    },
     navigation: {
         nextEl: '.btn-medalha-next',
         prevEl: '.btn-medalha-prev',
@@ -37,11 +34,18 @@ const swiperMedalhas = new Swiper('.carrossel-medalhas', {
         el: '.pag-medalha',
         clickable: true,
     },
+    // Configurações para telas maiores
     breakpoints: {
-        768: { slidesPerView: 3 } // Mostra 3 cards no PC
+        768: { 
+            slidesPerView: 3,
+            centeredSlides: false // No PC, alinha normalmente à esquerda
+        }
     }
 });
-// --- Lógica do Zoom nas Fotos ---
+
+console.log("Site da Escola Objetivo carregado com sucesso!");
+
+// --- LÓGICA DO LIGHTBOX (Zoom nas Fotos) ---
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('img-full');
 const lbClose = document.querySelector('.lightbox-close');
@@ -50,7 +54,7 @@ const lbClose = document.querySelector('.lightbox-close');
 const todasAsFotos = document.querySelectorAll('.photo-item img, .projeto-images img, .card-medalha img');
 
 todasAsFotos.forEach(foto => {
-    foto.style.cursor = "zoom-in"; // Muda o mouse para uma lupinha
+    foto.style.cursor = "zoom-in"; 
     foto.onclick = function() {
         lb.style.display = 'flex';
         lbImg.src = this.src;
@@ -58,9 +62,11 @@ todasAsFotos.forEach(foto => {
 });
 
 // Fechar ao clicar no X
-lbClose.onclick = () => {
-    lb.style.display = 'none';
-};
+if(lbClose) {
+    lbClose.onclick = () => {
+        lb.style.display = 'none';
+    };
+}
 
 // Fechar ao clicar fora da imagem
 lb.onclick = (e) => {
