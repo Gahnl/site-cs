@@ -108,15 +108,17 @@ nav a:hover { color: var(--amarelo-objetivo); }
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
     transition: 0.3s;
 }
-.card, p {
-    padding: 30px;
+
+.card p {
     text-align: justify;
-    hyphens: auto;           /* Ativa a quebra com hífen */
-    -webkit-hyphens: auto;    /* Suporte para Safari/Chrome */
-    -ms-hyphens: auto;        /* Suporte para Edge */
+    hyphens: auto;           
+    -webkit-hyphens: auto;    
+    -ms-hyphens: auto;        
 }
-.card, h3 {
+
+.card h3 {
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .card:hover { transform: translateY(-5px); }
@@ -161,7 +163,6 @@ nav a:hover { color: var(--amarelo-objetivo); }
 /* ============================================================
    CARROSSEL DE MEDALHISTAS
    ============================================================ */
-
 .carrossel-medalhas {
     width: 100% !important;
     height: auto !important;
@@ -171,45 +172,39 @@ nav a:hover { color: var(--amarelo-objetivo); }
     position: relative !important;
 }
 
-/* CARD */
 .card-medalha {
     background: #fff;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border-top: 5px solid var(--azul-objetivo);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    height: 300px; /* altura padrão para todos os cards */
-   
+    height: 300px;
 }
 
-/* IMAGEM */
 .card-medalha img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* mostra a imagem inteira sem cortar */
+    object-fit: contain;
     border-radius: 8px;
 }
 
-/* BOTÕES DO SWIPER */
 .btn-medalha-next,
 .btn-medalha-prev {
     color: var(--azul-objetivo) !important;
 }
 
-/* PAGINAÇÃO (BOLINHAS) */
 .swiper-pagination-bullet {
     background: #ccc;
     opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-    background: #f1c40f; /* dourado */
+    background: #f1c40f;
 }
+
 /* ============================================================
    GALERIA DE FOTOS
    ============================================================ */
@@ -253,11 +248,11 @@ nav a:hover { color: var(--amarelo-objetivo); }
 }
 
 /* ============================================================
-   SEÇÃO PARCEIROS (ESTILO LIMPO)
+   SEÇÃO PARCEIROS
    ============================================================ */
 .section-parceiros {
     padding: 40px 10%;
-    background: #fff; /* Fundo branco puro */
+    background: #fff;
     text-align: center;
 }
 
@@ -265,15 +260,15 @@ nav a:hover { color: var(--amarelo-objetivo); }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Espaço entre as logos */
-    flex-wrap: wrap; /* Para quebrar linha no celular */
+    gap: 40px;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .logo-item img {
-    width: 120px; /* Tamanho pequeno e controlado */
+    width: 120px;
     height: auto;
-    filter: grayscale(100%); /* Cinza para não brigar com o site */
+    filter: grayscale(100%);
     opacity: 0.5;
     transition: 0.3s;
 }
@@ -284,64 +279,6 @@ nav a:hover { color: var(--amarelo-objetivo); }
     transform: scale(1.05);
 }
 
-/* Ajuste para celular */
-@media (max-width: 768px) {
-    .container-logos {
-        gap: 20px;
-    }
-    .logo-item img {
-        width: 80px; /* Ainda menor no celular */
-    }
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.footer-container {
-    background-color: var(--azul-objetivo); 
-    color: white;
-    padding: 20px 0;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.footer-socials { display: flex; gap: 15px; }
-.footer-socials img { width: 28px; filter: brightness(0) invert(1); }
-
-/* ============================================================
-   RESPONSIVIDADE (CELULAR E TABLET)
-   ============================================================ */
-@media (max-width: 992px) {
-    .projeto-row, .projeto-row.reverse { flex-direction: column; text-align: center; }
-    .projeto-text { text-align: center; }
-    .projeto-images { width: 100%; }
-}
-
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 15px; }
-    .logo img { width: 140px; margin-bottom: 15px; }
-    nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    nav a { margin: 5px 10px; font-size: 14px; }
-
-    .swiper { height: 45vh; }
-    
-    .section-title { font-size: 1.8rem; }
-    
-    .projeto-images { grid-template-columns: 1fr; }
-    .projeto-images img { height: 250px; }
-
-    .footer-content { flex-direction: column; gap: 15px; text-align: center; }
-    
-    .photo-grid { grid-template-columns: repeat(2, 1fr); }
-}
 /* ============================================================
    BANNER DE CHAMADA PARA BOLSA (HOME)
    ============================================================ */
@@ -350,14 +287,16 @@ nav a:hover { color: var(--amarelo-objetivo); }
     padding: 35px 8%;
     border-bottom: 4px solid var(--amarelo-objetivo);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .banner-bolsa-container {
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: center;      /* Centraliza a coluna de texto na VERTICAL com a imagem */
+    align-items: center;
     justify-content: center;
     gap: 40px;
     background: #ffffff;
@@ -365,11 +304,11 @@ nav a:hover { color: var(--amarelo-objetivo); }
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     border-left: 6px solid var(--azul-objetivo);
+    box-sizing: border-box;
 }
 
-/* Imagem Completa (Sem cortes) */
 .banner-bolsa-img {
-    flex: 0 0 340px;          /* Trava a largura do quadro no desktop */
+    flex: 0 0 340px;
     max-width: 340px;
     width: 100%;
     border-radius: 12px;
@@ -379,18 +318,17 @@ nav a:hover { color: var(--amarelo-objetivo); }
 
 .banner-bolsa-img img {
     width: 100% !important;
-    height: auto !important;  /* Renderiza a altura real do panfleto sem cortar */
+    height: auto !important;
     display: block !important;
 }
 
-/* Coluna de Texto e Botão Centralizados */
 .banner-bolsa-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centralização Vertical */
-    align-items: center;     /* Centralização Horizontal do botão e títulos */
-    text-align: center;      /* Alinhamento do texto ao centro */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 10px;
 }
 
@@ -402,7 +340,6 @@ nav a:hover { color: var(--amarelo-objetivo); }
     line-height: 1.2;
 }
 
-/* Destaque da Data da Prova */
 .banner-bolsa-content .data-prova {
     background-color: var(--amarelo-objetivo);
     color: var(--azul-objetivo);
@@ -476,8 +413,10 @@ nav a:hover { color: var(--amarelo-objetivo); }
 
 .bolsa-form-wrapper {
     max-width: 800px;
+    width: 100%;
     margin: 40px auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .bolsa-card-form {
@@ -486,6 +425,7 @@ nav a:hover { color: var(--amarelo-objetivo); }
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     border-top: 6px solid var(--azul-objetivo);
+    box-sizing: border-box;
 }
 
 .bolsa-card-form h1 {
@@ -514,12 +454,15 @@ nav a:hover { color: var(--amarelo-objetivo); }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .field-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .field-group.full {
@@ -536,14 +479,15 @@ nav a:hover { color: var(--amarelo-objetivo); }
 .field-group input,
 .field-group select,
 .field-group textarea {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 11px 14px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.3s;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 .field-group input:focus,
@@ -572,59 +516,78 @@ nav a:hover { color: var(--amarelo-objetivo); }
 }
 
 /* ============================================================
-   AJUSTES RESPONSIVOS PARA CELULAR E TABLET
+   FOOTER
    ============================================================ */
-@media (max-width: 768px) {
-    .banner-bolsa {
-        padding: 20px 4%;
-    }
+.footer-container {
+    background-color: var(--azul-objetivo); 
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
 
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-socials { display: flex; gap: 15px; }
+.footer-socials img { width: 28px; filter: brightness(0) invert(1); }
+
+/* ============================================================
+   RESPONSIVIDADE (CELULAR E TABLET - UNIFICADO)
+   ============================================================ */
+@media (max-width: 992px) {
+    .projeto-row, .projeto-row.reverse { flex-direction: column; text-align: center; }
+    .projeto-text { text-align: center; }
+    .projeto-images { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    /* Menu, Header e Rodapé */
+    .navbar { flex-direction: column; padding: 15px; }
+    .logo img { width: 140px; margin-bottom: 15px; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { margin: 5px 10px; font-size: 14px; }
+
+    .swiper { height: 45vh; }
+    .section-title { font-size: 1.8rem; }
+    .projeto-images { grid-template-columns: 1fr; }
+    .projeto-images img { height: 250px; }
+    .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .container-logos { gap: 20px; }
+    .logo-item img { width: 80px; }
+
+    /* Banner da Bolsa e Formulário */
+    .banner-bolsa { padding: 15px 10px; }
     .banner-bolsa-container {
         flex-direction: column !important;
-        padding: 20px 15px;
-        gap: 20px;
+        padding: 20px 15px !important;
+        gap: 20px !important;
+        border-left: none !important;
+        border-top: 6px solid var(--azul-objetivo) !important;
     }
-
     .banner-bolsa-img {
         flex: 0 0 auto !important;
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
     }
-
-    .banner-bolsa-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .banner-bolsa-content p {
-        font-size: 0.95rem;
-    }
-
+    .banner-bolsa-content { width: 100% !important; padding: 0 !important; }
+    .banner-bolsa-content h2 { font-size: 1.4rem !important; }
+    .banner-bolsa-content p { font-size: 0.95rem !important; }
     .btn-acessar-form {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .bolsa-form-wrapper {
-        padding: 0 10px;
-        margin: 20px auto;
-    }
-
-    .bolsa-card-form {
-        padding: 20px 15px;
-    }
-
-    .bolsa-card-form h1 {
-        font-size: 1.4rem;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr !important; /* Coluna única no mobile */
-    }
-
-    .field-group input,
-    .field-group select,
-    .field-group textarea {
+        width: 100% !important;
+        text-align: center !important;
         box-sizing: border-box !important;
+        padding: 14px 10px !important;
     }
+    .bolsa-form-wrapper { padding: 0 10px !important; margin: 15px auto !important; }
+    .bolsa-card-form { padding: 20px 15px !important; }
+    .bolsa-card-form h1 { font-size: 1.3rem !important; }
+    .form-grid { display: flex !important; flex-direction: column !important; gap: 10px !important; }
 }
