@@ -342,3 +342,250 @@ nav a:hover { color: var(--amarelo-objetivo); }
     
     .photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
+/* ============================================================
+   BANNER DE CHAMADA PARA BOLSA (PÁGINA PRINCIPAL)
+   ============================================================ */
+
+.banner-bolsa {
+    background-color: var(--branco);
+    padding: 40px 5%;
+    border-bottom: 4px solid var(--amarelo-objetivo);
+    width: 100%;
+}
+
+.banner-bolsa-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;      /* Centraliza a coluna de texto na VERTICAL em relação à imagem */
+    justify-content: center;  /* Centraliza na HORIZONTAL */
+    gap: 40px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 6px solid var(--azul-objetivo);
+}
+
+/* Envoltório da Imagem - Mantém proporção sem travar altura */
+.banner-bolsa-img {
+    flex: 0 0 340px;          /* Largura fixa para a imagem no computador */
+    max-width: 340px;
+    width: 100%;
+    height: auto !important;  /* Cancela qualquer trava de altura anterior */
+    max-height: none !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Reset total na Tag IMG para não cortar */
+.banner-bolsa-img img {
+    width: 100% !important;
+    height: auto !important;  /* Renderiza a altura real do panfleto */
+    max-height: none !important;
+    object-fit: fill !important; 
+    display: block !important;
+}
+
+/* Coluna do Texto totalmente centralizada */
+/* Destaque da Data da Prova */
+.banner-bolsa-content .data-prova {
+    background-color: var(--amarelo-objetivo);
+    color: var(--azul-objetivo);
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.banner-bolsa-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Alinha conteúdo ao centro verticalmente */
+    align-items: center;      /* Alinha o botão ao centro horizontalmente */
+    text-align: center;       /* Centraliza o texto */
+    padding: 10px;
+}
+
+.banner-bolsa-content h2 {
+    color: var(--azul-objetivo);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.banner-bolsa-content p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+.btn-acessar-form {
+    display: inline-block;
+    background-color: var(--azul-objetivo);
+    color: var(--branco);
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-acessar-form:hover {
+    background-color: var(--amarelo-objetivo);
+    color: var(--azul-objetivo);
+    transform: translateY(-2px);
+}
+
+/* Ajustes Responsivos para Celular */
+@media (max-width: 768px) {
+    .banner-bolsa-container {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .banner-bolsa-img {
+        flex: auto;
+        max-width: 100%;
+    }
+}
+
+
+/* ============================================================
+   ESTILOS EXCLUSIVOS DA PÁGINA DE BOLSA (bolsa.html)
+   ============================================================ */
+.page-bolsa-body {
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+.bolsa-page-header {
+    background: var(--azul-objetivo);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bolsa-page-header img {
+    height: 50px;
+}
+
+.btn-voltar-home {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.btn-voltar-home:hover {
+    color: var(--amarelo-objetivo);
+}
+
+.bolsa-form-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.bolsa-card-form {
+    background: var(--branco);
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-top: 6px solid var(--azul-objetivo);
+}
+
+.bolsa-card-form h1 {
+    color: var(--azul-objetivo);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.bolsa-card-form p.subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.form-section-title {
+    color: var(--azul-objetivo);
+    font-size: 1.2rem;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--amarelo-objetivo);
+    margin: 25px 0 15px 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Garante que campos que ocupam a linha inteira funcionem no grid */
+.field-group.full {
+    grid-column: 1 / -1;
+}
+
+.field-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    border-color: var(--azul-objetivo);
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.2);
+}
+
+.btn-submit-bolsa {
+    width: 100%;
+    background-color: var(--azul-objetivo);
+    color: var(--branco);
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.btn-submit-bolsa:hover {
+    background-color: #082d68;
+}
