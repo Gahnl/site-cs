@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição para Bolsa de Estudos | Escola Objetivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-bolsa-body">
+
+    <!-- CABEÇALHO SIMPLIFICADO -->
+    <header class="bolsa-page-header">
+        <a href="index.html">
+            <img src="Assets/logo cs ok.png" alt="Escola Objetivo">
+        </a>
+        <a href="index.html" class="btn-voltar-home">&larr; Voltar ao site principal</a>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL DO FORMULÁRIO -->
+    <main class="bolsa-form-wrapper">
+        <div class="bolsa-card-form">
+            <h1>Inscrição para Bolsa de Estudos</h1>
+            <p class="subtitle">Preencha os campos abaixo com os dados do responsável e do aluno para solicitar a análise de bolsa.</p>
+
+           <form action="https://formspree.io/f/mjybyjwl" method="POST" id="form-bolsa">
+
+    <!-- DADOS DO RESPONSÁVEL -->
+    <h3 class="form-section-title">Dados do Responsável</h3>
+    
+    <div class="form-grid">
+        <div class="field-group full">
+            <label for="resp_nome">Nome Completo do Responsável *</label>
+            <input type="text" id="resp_nome" name="resp_nome" required placeholder="Digite seu nome completo">
+        </div>
+
+        <div class="field-group">
+            <label for="resp_cpf">CPF *</label>
+            <input type="text" id="resp_cpf" name="resp_cpf" required placeholder="000.000.000-00">
+        </div>
+
+        <div class="field-group">
+            <label for="resp_tel">Telefone / WhatsApp *</label>
+            <input type="tel" id="resp_tel" name="resp_tel" required placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="field-group full">
+            <label for="resp_email">E-mail *</label>
+            <input type="email" id="resp_email" name="resp_email" required placeholder="seuemail@exemplo.com">
+        </div>
+
+        <div class="field-group full">
+            <label for="resp_endereco">Endereço Completo (Rua, Nº, Bairro, Cidade) *</label>
+            <input type="text" id="resp_endereco" name="resp_endereco" required placeholder="Ex: Rua das Flores, 123, Bairro Centro, Igaraçu do Tiête/SP">
+        </div>
+    </div>
+
+    <!-- DADOS DO ALUNO -->
+    <h3 class="form-section-title">Dados do Aluno</h3>
+    
+    <div class="form-grid">
+        <div class="field-group full">
+            <label for="aluno_nome">Nome Completo do Aluno *</label>
+            <input type="text" id="aluno_nome" name="aluno_nome" required placeholder="Digite o nome completo do aluno">
+        </div>
+
+        <div class="field-group">
+            <label for="aluno_nasc">Data de Nascimento *</label>
+            <input type="date" id="aluno_nasc" name="aluno_nasc" required>
+        </div>
+
+        <div class="field-group">
+            <label for="aluno_serie">Ano / Série Pretendida em 2027 *</label>
+            <select id="aluno_serie" name="aluno_serie" required>
+                <option value="" disabled selected>Selecione o ano...</option>
+                <option value="1º Ano - Ensino Fundamental">1º Ano - Ensino Fundamental</option>
+                <option value="2º Ano - Ensino Fundamental">2º Ano - Ensino Fundamental</option>
+                <option value="3º Ano - Ensino Fundamental">3º Ano - Ensino Fundamental</option>
+                <option value="4º Ano - Ensino Fundamental">4º Ano - Ensino Fundamental</option>
+                <option value="5º Ano - Ensino Fundamental">5º Ano - Ensino Fundamental</option>
+                <option value="6º Ano - Ensino Fundamental">6º Ano - Ensino Fundamental</option>
+                <option value="7º Ano - Ensino Fundamental">7º Ano - Ensino Fundamental</option>
+                <option value="8º Ano - Ensino Fundamental">8º Ano - Ensino Fundamental</option>
+                <option value="9º Ano - Ensino Fundamental">9º Ano - Ensino Fundamental</option>
+            </select>
+        </div>
+
+        <div class="field-group full">
+            <label for="observacoes">Observações / Motivo da Solicitação</label>
+            <textarea id="observacoes" name="observacoes" rows="4" placeholder="Escreva aqui caso queira relatar algum detalhe relevante para a comissão..."></textarea>
+        </div>
+    </div>
+
+    <button type="submit" class="btn-submit-bolsa">Enviar Solicitação</button>
+</form>
+        </div>
+    </main>
+
+</body>
+</html>
